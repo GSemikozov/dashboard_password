@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Гроші до зарплати</title>
+    <script>
+        function getCookie(name) {
+            var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        if( (window.devicePixelRatio===undefined?1:window.devicePixelRatio)>1 && !getCookie('HTTP_IS_RETINA')) {
+            document.cookie='HTTP_IS_RETINA=1;path=/';
+            location.reload();
+        }
+    </script>
+    <link href="css/reset.css" media="screen" rel="stylesheet" />
+    <link href="css/jquery.nouislider.css" media="screen" rel="stylesheet" />
+    <link href="css/slick.css" media="screen" rel="stylesheet" />
+    <link href="css/jquery-ui.css" media="screen" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox.css" media="all" />
+    <link href="css/style.css" media="screen" rel="stylesheet" />
+    <link href="css/dashboard.css" media="screen" rel="stylesheet" />
+    <!-- <link href="favicon.ico" rel="icon"  type="image/png" />  -->
+
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,500,700,300italic&subset=latin,cyrillic"  rel="stylesheet" type="text/css">
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+<body class="<?php if ($act == 'login' || $act == 'partners') echo $act; if ($act == '404') echo 'compact';?>">
+
+<div class="zHiddenBlock">
+
+    <div class="changePassPopup" id="change-pass-popup">
+        <h6>Смена пароля</h6>
+        <div class="formRow">
+            <div class="registrationCol">
+                <div class="registrationElemTitle">Старый пароль</div>
+                <div class="formInput">
+                    <input type="text" class="dashboardPopupInput" required />
+                </div>
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="registrationCol">
+                <div class="registrationElemTitle">Новый пароль</div>
+                <div class="formInput">
+                    <input type="text" class="dashboardPopupInput" required />
+                </div>
+            </div>
+        </div>
+        <div class="formRow">
+            <div class="registrationCol">
+                <div class="registrationElemTitle">Укажите новый пароль еще раз</div>
+                <div class="formInput">
+                    <input type="text" class="dashboardPopupInput" required />
+                </div>
+            </div>
+        </div>
+        <div class="passBtnWrap">
+            <button type="submit" class="button passBtn">сохранить</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="wrapper dashboardWrapper">
+    <header class="header">
+        <div class="mbox">
+            <div class="headerTop">
+                <div class="headerTopRow">
+                    <div class="headerTopCol headerAccountDashboard">
+                        <div class="userData clearfix">
+                            <a href="" class="userName"><i class="if if-user"></i> Антон Валерьевич</a>
+                            <div class="userSettings">
+                                <a href="#" class="">Настройки профиля</a>|
+                                <a href="#" class="">Выйти</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="headerTopCol headerLogoDashboard">
+                        <p>Срочный микрозайм онлайн до зарплаты</p>
+                        <span class="logo">ГРОШІ ДО ЗАРПЛАТИ</span>
+                    </div>
+                    <div class="headerTopCol headerContacts">
+                        <span class="phone"><i class="if if-phone"></i>8 800 123 456</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="mbox">
+            <div class="sidebar">
+                <?php
+                    $sidebar2 = array('dashboard');
+
+                if ( in_array($act , $sidebar2) ) { ?>
+                <ul class="sidebarMenu">
+                    <li><a href="" class="sidebarMenuLink active"><span>Расчеты</span></a></li>
+                    <li><a href="#" class="sidebarMenuLink"><span>Статистика</span></a></li>
+                    <li><a href="" class="sidebarMenuLink"><span>Кредитный отчет</span></a></li>
+                    <li><a href="" class="sidebarMenuLink"><span>Смена пароля</span></a></li>
+                    <li><a href="" class="sidebarMenuLink"><span>Акции</span></a></li>
+                    <li><a href="" class="sidebarMenuLink"><span>Вопросы и ответы</span></a></li>
+                </ul>
+                <ul class="sidebarMenu sidebarMenuForm">
+                    <li>
+                        <div class="formRow">
+                            <i class="icon"><img src="images/tv.png" alt=""></i>
+                            <p class="registrationElemHeading">Статистика</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="formRow">
+                            <div class="registrationCol">
+                                <div class="registrationElemTitle"><i class="icon"><img src="images/link.png" alt=""></i>Реферальная ссылка</div>
+                                <div class="formInput">
+                                    <input type="text" required />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="formRow">
+                            <div class="registrationCol">
+                                <div class="registrationElemTitle"><i class="icon"><img src="images/barcode.png" alt=""></i>Промокод</div>
+                                <div class="formInput">
+                                    <input type="text" required />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="sidebarMenu sidebarMenuForm">
+                    <div class="formRow">
+                        <div class="registrationCol">
+                            <div class="registrationElemTitle"><i class="icon"><img src="images/envelope.png" alt=""></i>Служба поддержки</div>
+                            <div class="formInput">
+                                <textarea class="formInputTextarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="button formInputButton">Отправить</a>
+                </div>
+                <?php } ?>
+            </div>
+            <div class="content">
+                <div class="article">
+                    <h1 class="articleHeading mainheading">Смена пароля</h1>
+                    <div>
+                        <div class="passWrapText"><span class="passTitle">Текущий пароль</span><br><span class="passRequired">***********</span></div>
+                        <a href="#change-pass-popup" class="popup button contentBtn">Изменить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="mbox">
+            <div class="footerBottom">
+                <div class="copyright">© 2015 <a href="#" class="copyrightLink">Groshi</a>, торговая марка ООО «Groshi»</div>
+                <div class="footerBottomRight"><img src="images/t_counter.jpg" alt=""></div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.nouislider.all.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/maskedinput-1.4.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="fancybox/jquery.fancybox.js" type="text/javascript"></script>
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</div>
+</body>
+</html>
